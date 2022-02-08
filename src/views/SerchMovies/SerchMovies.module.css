@@ -1,0 +1,15 @@
+.form {
+  padding: 15px;
+}
+
+.serchButton {
+  cursor: pointer;
+  padding: 1px;
+  width: 75px;
+  margin-left: 10px;
+}
+
+.serchButton:hover,
+.serchButton:focus {
+  background-color: blue;
+}
