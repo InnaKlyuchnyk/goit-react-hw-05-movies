@@ -2,7 +2,6 @@ import Navigation from './Navigation'
 import { Routes, Route } from 'react-router-dom';
 import HomeView from '../views/HomeView'
 import SerchMovies from '../views/SerchMovies'
-import NotFoundPage from '../views/NotFoundPage'
 import OneMovieCard from '../views/OneMovieCard'
 
 export const App = () => {

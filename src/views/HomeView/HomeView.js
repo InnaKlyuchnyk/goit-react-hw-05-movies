@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import OneMovieCard from '../OneMovieCard';
+// import OneMovieCard from '../OneMovieCard';
 import { fetchTrendCollection } from '../../services/fetches';
 
 const HomeView = () => {
