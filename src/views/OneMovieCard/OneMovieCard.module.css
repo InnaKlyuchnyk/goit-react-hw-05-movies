@@ -1,0 +1,18 @@
+.movieCard {
+  display: flex;
+  padding: 15px;
+}
+
+.movieDescription {
+  margin-left: 10px;
+}
+
+.additInfo {
+  padding: 15px;
+}
+
+.link {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+}

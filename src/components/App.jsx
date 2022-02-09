@@ -1,5 +1,5 @@
 import Navigation from './Navigation'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import HomeView from '../views/HomeView'
 import SerchMovies from '../views/SerchMovies'
 import OneMovieCard from '../views/OneMovieCard'
@@ -11,9 +11,11 @@ export const App = () => {
       <Routes>
         <Route path='/' element={<Navigation />}>
           <Route index element={<HomeView />}/>
-          <Route path='movies' element={<SerchMovies />} >
-            <Route path=':movieId' element={<OneMovieCard/> }/>
-          </Route>
+          <Route path='movies' element={<SerchMovies />} />
+          <Route path='movies/:movieId' element={<OneMovieCard />} />
+          <Route path='*' element={ <Navigate to='/'/>}/>
+            
+          
         </Route>
       </Routes>
       
