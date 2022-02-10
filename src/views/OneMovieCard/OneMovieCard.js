@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { movieDetails } from '../../services/fetches';
 import styles from './OneMovieCard.module.css';
@@ -36,10 +36,13 @@ export const OneMovieCard = () => {
 
   return (
     <>
-      <div className={styles.movieCard}>
+      <div className={styles.moviePage}>
         {loading && <h2>Loading</h2>}
+        <button type="button" className={styles.button}>
+          Go back
+        </button>
         {movie && (
-          <>
+          <div className={styles.movieCard}>
             <img
               src={baseImgUrl + imgSize + movie.poster_path}
               alt={movie.title}
@@ -49,22 +52,25 @@ export const OneMovieCard = () => {
             />
             <div className={styles.movieDescription}>
               <h3>
-                {movie.title} ({movie.release_date})
+                {movie.title} ({movie.release_date.slice(0, 4)})
               </h3>
+              <h5>Overview</h5>
               <p>{movie.overview}</p>
+              <h5>Genres</h5>
               <p>{getGenres()}</p>
             </div>
-          </>
+          </div>
         )}
       </div>
       <div className={styles.additInfo}>
         <h4>Additional information</h4>
-        <Link to="" className={styles.link}>
+        <Link to="cast" className={styles.link}>
           Cast
         </Link>
-        <Link to="" className={styles.link}>
+        <Link to="reviews" className={styles.link}>
           Reviews
         </Link>
+        <Outlet />
       </div>
     </>
   );

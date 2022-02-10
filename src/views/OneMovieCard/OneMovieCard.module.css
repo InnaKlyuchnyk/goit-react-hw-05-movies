@@ -1,6 +1,14 @@
+.moviePage {
+  padding: 15px;
+}
+
+.button {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
 .movieCard {
   display: flex;
-  padding: 15px;
 }
 
 .movieDescription {
