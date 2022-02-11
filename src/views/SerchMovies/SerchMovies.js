@@ -27,6 +27,8 @@ const SerchMovies = () => {
       .finally(() => setLoading(false));
 
     setSerchParams({ query: serchQuery });
+
+    if (!serchParams) return;
   };
 
   return (
