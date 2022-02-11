@@ -52,3 +52,17 @@ export async function movieReviews(movieId) {
     .catch(error => console.log(error));
   return reviews;
 }
+
+export async function fetchMoviesByKeyWord(value) {
+  const movies = await fetch(
+    `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${value}&page=1&include_adult=false`
+  )
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .catch(error => console.log(error));
+
+  return movies;
+}

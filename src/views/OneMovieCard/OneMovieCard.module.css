@@ -2,9 +2,11 @@
   padding: 15px;
 }
 
-.button {
+.goBack {
   margin-bottom: 10px;
-  cursor: pointer;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
 }
 
 .movieCard {

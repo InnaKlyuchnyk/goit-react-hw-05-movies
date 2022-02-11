@@ -38,9 +38,9 @@ export const OneMovieCard = () => {
     <>
       <div className={styles.moviePage}>
         {loading && <h2>Loading</h2>}
-        <button type="button" className={styles.button}>
+        <Link to="/" className={styles.goBack}>
           Go back
-        </button>
+        </Link>
         {movie && (
           <div className={styles.movieCard}>
             <img
