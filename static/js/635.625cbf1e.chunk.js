@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[635],{635:function(e,_,i){i.r(_),_.default={moviePage:"OneMovieCard_moviePage__rCqiC",goBack:"OneMovieCard_goBack__YjVnZ",movieCard:"OneMovieCard_movieCard__-qcbD",movieDescription:"OneMovieCard_movieDescription__a6T+L",additInfo:"OneMovieCard_additInfo__BNbeV",link:"OneMovieCard_link__+O6BR",genre:"OneMovieCard_genre__mfKhz"}}}]);
+//# sourceMappingURL=635.625cbf1e.chunk.js.map
