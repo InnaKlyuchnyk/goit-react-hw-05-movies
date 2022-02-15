@@ -1,15 +1,22 @@
+import { lazy, Suspense } from 'react';
 import Navigation from './Navigation'
 import { Routes, Route, Navigate } from 'react-router-dom';
-import HomeView from '../views/HomeView'
-import SerchMovies from '../views/SerchMovies'
-import OneMovieCard from '../views/OneMovieCard'
-import ActorCard from '../views/ActiorCard'
-import Reviews from '../views/Reviews'
+import { Toaster } from 'react-hot-toast';
+
+const loadingPage = componentName => {
+  return lazy(() => import(`../views/${componentName}`))
+}
+const HomeView = loadingPage('HomeView')
+const SerchMovies = loadingPage('SerchMovies')
+const OneMovieCard = loadingPage('OneMovieCard')
+const ActorCard = loadingPage('ActorCard')
+const Reviews = loadingPage('Reviews')
 
 export const App = () => {
 
-  return(
-  <>
+  return (
+    <>
+      <Suspense fallback='LOADING...'>
       <Routes>
         <Route path='/' element={<Navigation />}>
       
@@ -23,13 +30,13 @@ export const App = () => {
             <Route path='reviews' element={<Reviews/> }/>
             
           </Route>
-          {/* <Route path=''/> */}
-            
-          
+                   
           <Route path='*' element={ <Navigate to='/'/>}/>
             
         </Route>
       </Routes>
-      
-  </>)
+    </Suspense>
+      <Toaster />
+      </>
+)
 };

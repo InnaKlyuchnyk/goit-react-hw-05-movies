@@ -1,23 +1,5 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import OneMovieCard from '../OneMovieCard';
-import { fetchTrendCollection } from '../../services/fetches';
-
-const useFetchTrandMovies = () => {
-  const [trendMovies, setTrendMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-
-    fetchTrendCollection()
-      .then(data => {
-        setTrendMovies(data.results);
-      })
-      .finally(() => setLoading(false));
-  }, []);
-  return { trendMovies, loading };
-};
+import useFetchTrandMovies from './useFetchTrandMovies';
 
 const HomeView = () => {
   const { trendMovies, loading } = useFetchTrandMovies();
@@ -29,7 +11,9 @@ const HomeView = () => {
         {trendMovies.map(movie => {
           return (
             <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+              <Link to={`/movies/${movie.id}`}>
+                {movie.title ? movie.title : movie.name}
+              </Link>
             </li>
           );
         })}

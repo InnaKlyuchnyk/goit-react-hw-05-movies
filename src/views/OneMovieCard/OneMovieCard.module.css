@@ -26,3 +26,9 @@
   padding: 5px;
   text-decoration: none;
 }
+
+.genre {
+  display: inline-flex;
+  padding: 5px;
+  margin: 0;
+}
